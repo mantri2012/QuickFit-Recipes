@@ -1,38 +1,28 @@
-import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/Link';
-import Home from './pages/Homepage';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import About from './pages/About';
 import Recipes from './pages/Recipes';
 import MillesFavRecipes from './pages/MillesFavRecipes';
-import './index.css'
-import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
-  const Header = () => (
-    <header className='recipe-header'>
-      <h2 className='header-size'>Welcome to Mille's QuickFit Recipes! 😊 </h2>
-    </header>
-  );
-  const Footer = () => (
-    <footer>
-      <p>&copy; 2025 Quickfit Recipes. All rights reserved.</p>
-    </footer>
-  );
   return (
-  <div className="app-wrapper">
+   <>
       <Header />
-      <Navbar />
-    <main>
-      <div className="container">
-       <Routes>
+      <main>
+        <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/recipes" element={<Recipes />} />
-          <Route path="/favourites" element={<MillesFavRecipes/>} />
+          <Route path="/favorites" element={<MillesFavRecipes />} />
+          <Route path="*" element={<h2>Page Not Found</h2>} />
         </Routes>
-      </div>
-    </main>
-    <Footer />
-  </div>
- );
+      </main>
+      <Footer />
+    </>
+  );
 }
 
-export default App; 
+export default App;

@@ -1,13 +1,20 @@
+import React from 'react';
+import './RecipeCard.css';
 
-
-function RecipeCard({ title, ingredients, prepTime }) {
+function RecipeCard({ title, ingredients, prepTime, onDelete }) {
   return (
-    <article className="recipe-card">
+    <div className="recipe-card">
       <h3>{title}</h3>
-      <p>Ingredients: {ingredients.join(', ')} </p>
-      <p>Prep Time: {prepTime}</p> 
-      <button type="button" className="btn btn-danger">Delete</button> 
-    </article>
+      <ul>
+        {ingredients.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+      <p>Prep Time: {prepTime}</p>
+      {onDelete && (
+        <button onClick={onDelete} className="btn btn-danger">Delete</button>
+      )}
+    </div>
   );
 }
 

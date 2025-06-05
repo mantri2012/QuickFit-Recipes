@@ -1,0 +1,21 @@
+.recipe-card {
+  border: 1px solid #120f0f;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  background-color: #d9d050;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 180px; 
+}
+
+.recipe-card:hover {
+  transform: scale(1.03);
+  background-color: #2f5b82; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
